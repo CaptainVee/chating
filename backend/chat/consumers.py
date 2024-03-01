@@ -72,7 +72,7 @@ class ChatConsumer(AsyncWebsocketConsumer):
             {
                 "type": "update_read_status",
                 "message_id": message_id,
-                # "username": username,  # Optional for displaying who read
+                # "username": username,  
             }
         )
 
