@@ -3,7 +3,7 @@ from accounts.models import User
 
 class Room(models.Model):
     name = models.CharField(max_length=128)
-    slug = models.SlugField(unique=True)
+    # slug = models.SlugField(unique=True)
     users = models.ManyToManyField(User)
 
     def __str__(self):

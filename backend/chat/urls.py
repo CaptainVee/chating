@@ -1,8 +1,7 @@
 from django.urls import path
-from django.views.generic import TemplateView
-from chat import views
+from .views import MessageListView
 
 
 urlpatterns = [
-    path("room/<str:room_name>/", views.room_create, name='room-create'),
+    path("messages/<int:to_user_id>/", MessageListView.as_view(), name='room-create'),
 ]
