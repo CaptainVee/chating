@@ -8,6 +8,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 const initialState = {
   user: user ? user : null, //set user to user if it exisit else set to null
   isLoading: false,
+  users: []
 };
 
 // register user
@@ -49,6 +50,21 @@ export const activate = createAsyncThunk(
   }
 );
 
+// get all users 
+export const getUsers = createAsyncThunk(
+  "user/getAll",
+  async (_, thunkAPI) => {
+    try {
+      const token = thunkAPI.getState().auth.user.access
+      console.log(" token", token)
+      return await authService.getUsers(token);
+    } catch (error) {
+        console.log(" erre", error)
+        return thunkAPI.rejectWithValue(extractErrorMessage(error))
+    }
+  }
+);
+
 export const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -86,16 +102,13 @@ export const authSlice = createSlice({
         state.user = null;
       })
       //   activate
-      .addCase(activate.pending, (state) => {
+      .addCase(getUsers.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(activate.fulfilled, (state) => {
+      .addCase(getUsers.fulfilled, (state, action) => {
         state.isLoading = false;
+        state.users = action.payload
       })
-      .addCase(activate.rejected, (state, action) => {
-        state.isLoading = false;
-        state.user = null;
-      });
   },
 });
 

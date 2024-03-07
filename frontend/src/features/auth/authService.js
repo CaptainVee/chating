@@ -44,5 +44,17 @@ const activate = async (userData) => {
     return response.data
 }
 
-const authService = {register, login, logout, activate}
+const getUsers = async (token) => {
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    }
+    const response = await axios.get(API_URL + "users/", config);
+    return response.data;
+  };
+
+const authService = {register, login, logout, activate, getUsers}
 export default authService

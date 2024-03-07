@@ -1,22 +1,16 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from "react-router-dom";
-import { createRoom } from '../features/chats/chatSlice';
-import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 function Room() {
 
     const [room, setRoom] = useState('');
-    const dispatch = useDispatch();
+
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
         // Simulate login logic (replace with your actual logic)    
-        dispatch(createRoom(room))
-        .then((payload) => {
-        console.log("loggin in", payload)
+
         navigate("/chat", { state: room });
-        })
-        .catch((e) => {console.log(e)});
       };
     
   return (

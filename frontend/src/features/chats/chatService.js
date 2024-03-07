@@ -8,7 +8,7 @@ const getMessages = async () => {
   const config = {
     headers: {
       'Content-Type': 'application/json',
-      // 'Authorization': `Bearer ${token}`,
+      'Authorization': `Bearer ${token}`,
     },
   }
   const response = await axios.get(API_URL + `cower/`, config);
@@ -41,5 +41,5 @@ const createRoom = async (token, room) => {
 
 
 
-const chatService = { getMessages, createMessage, createRoom };
+const chatService = { createMessage, createRoom };
 export default chatService;

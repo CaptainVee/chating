@@ -29,7 +29,7 @@ const Login = () => {
     dispatch(login(userData))
     .then((payload) => {
     console.log("loggin in", payload)
-    navigate("/room");
+    navigate("/chat");
     })
     .catch((e) => {console.log(e)});
   };
