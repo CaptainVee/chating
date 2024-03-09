@@ -1,18 +1,21 @@
-# Use a lightweight Python image
 FROM python:3.9-slim
 
-WORKDIR /django_htmx_chat/app
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
 
-# Copy requirements.txt and install dependencies
-COPY requirements.txt ./
+# Set working directory
+WORKDIR /app
 
+# Install dependencies
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+# Copy project files
 COPY . .
-# Copy your Django app code
 
-# Expose the port Django listens on (usually 8000)
+# Expose port
 EXPOSE 8000
 
-# Run Django development server
+# Start server
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
