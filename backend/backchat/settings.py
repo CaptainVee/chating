@@ -6,7 +6,7 @@ SECRET_KEY = "django-insecure-q8$1^k7t36@2_o#ddypqs2xn(0vsn07y6g@ynj_gq9zzo$_)2)
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["chating-yejc.onrender", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["chating-yejc.onrender.com", "localhost", "127.0.0.1"]
 
 INSTALLED_APPS = [
     'corsheaders',
