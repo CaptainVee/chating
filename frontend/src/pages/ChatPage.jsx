@@ -61,7 +61,7 @@ function ChatPage() {
     }
 
     const socket = new WebSocket(
-      `ws://${CHAT_URL}/chat/${to_user_id}/?access_token=${access_token}`
+      `${CHAT_URL}/chat/${to_user_id}/?access_token=${access_token}`
     );
     socketRef.current = socket; // Store reference in useRef
 
