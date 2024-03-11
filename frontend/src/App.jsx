@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ChatPage from "./pages/ChatPage";
 import LoginPage from "./pages/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";
-import Room from "./pages/Room";
 // import SignUp from "./pages/SignUp";
 // import { ToastContainer } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
@@ -30,7 +29,6 @@ const App = () => {
                     {/* Nested Routes */}
                     
                     <Route path="/chat" element={<ChatPage />} />
-                    <Route path="/room" element={<Room />} />
                     
                     {/* <Route path="*" element={<NotFound />} /> */}
                   </Routes>
