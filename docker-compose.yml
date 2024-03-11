@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+
+#  docker tag django-htmx-chat-backend:v1.0 captainvee/chatapp:v1.0
+# docker push captainvee/chatapp:v1.0  
+

@@ -1,0 +1,8 @@
+.idea
+venv
+.vscode
+**/.git
+.gitignore
+__pycache__/
+node_modules/
+
