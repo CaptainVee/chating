@@ -137,3 +137,7 @@ REST_AUTH = {
     "JWT_AUTH_COOKIE": "chat-access-token",
     "JWT_AUTH_REFRESH_COOKIE": "chat-refresh-token",
 }
+
+
+# Allauth setup
+ACCOUNT_EMAIL_VERIFICATION = "none"
