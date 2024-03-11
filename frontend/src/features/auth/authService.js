@@ -1,7 +1,7 @@
 import axios from "axios";
 import { API_URL } from "../../../constants.js"
 
-const REGISTER_URL =  API_URL + 'auth/registeration/'
+const REGISTER_URL =  API_URL + 'dj-rest-auth/registration/'
 const LOGIN_URL = API_URL + 'dj-rest-auth/login/'
 const ACTIVATE_URL = API_URL + 'users/activation/'
 
@@ -13,6 +13,9 @@ const register = async (userData) => {
         }
     }
     const response = await axios.post(REGISTER_URL, userData, config)
+    if (response.data) {
+        localStorage.setItem("user", JSON.stringify(response.data))
+    }
     return response.data
 }
 

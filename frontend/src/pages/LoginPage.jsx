@@ -72,6 +72,7 @@ const Login = () => {
           Login
         </button>
       </form>
+      <Link to="/sign-up"> Sign Up</Link>
     </div>
   );
 };

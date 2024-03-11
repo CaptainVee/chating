@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ChatPage from "./pages/ChatPage";
 import LoginPage from "./pages/LoginPage";
+import Register from "./pages/Register";
 import PrivateRoute from "./components/PrivateRoute";
 // import SignUp from "./pages/SignUp";
 // import { ToastContainer } from 'react-toastify';
@@ -17,6 +18,7 @@ const App = () => {
 
         {/* <Route path="/sign-in" element={<SignIn />} /> */}
         <Route index element={<LoginPage />} />
+        <Route path="/sign-up"element={<Register />} />
 
         {/* Route with NavbarDashboard and Sidebar */}
 

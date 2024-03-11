@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUsers } from "../features/auth/authSlice";
-import { API_URL } from "../../constants";
+import { API_URL, CHAT_URL } from "../../constants";
 
 function ChatPage() {
   const dispatch = useDispatch();
@@ -61,7 +61,7 @@ function ChatPage() {
     }
 
     const socket = new WebSocket(
-      `ws://${API_URL}/chat/${to_user_id}/?access_token=${access_token}`
+      `ws://${CHAT_URL}/chat/${to_user_id}/?access_token=${access_token}`
     );
     socketRef.current = socket; // Store reference in useRef
 

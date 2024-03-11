@@ -4,7 +4,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure-q8$1^k7t36@2_o#ddypqs2xn(0vsn07y6g@ynj_gq9zzo$_)2)"
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["chating-yejc.onrender.com", "localhost", "127.0.0.1"]
 
@@ -141,3 +141,6 @@ REST_AUTH = {
 
 # Allauth setup
 ACCOUNT_EMAIL_VERIFICATION = "none"
+
+
+CSRF_TRUSTED_TOKEN = [""]
