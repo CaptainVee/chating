@@ -145,3 +145,4 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 
 
 CSRF_TRUSTED_TOKEN = [""]
+CSRF_TRUSTED_ORIGINS = ['https://chating-yejc.onrender.com']
