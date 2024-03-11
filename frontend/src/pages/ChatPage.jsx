@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUsers } from "../features/auth/authSlice";
+import { API_URL } from "../../constants";
 
 function ChatPage() {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ function ChatPage() {
         "Authorization": `Bearer ${access_token}`,
       };
 
-      const response = await fetch(`http://localhost:8000/messages/${to_user_id}/`, {
+      const response = await fetch(`${API_URL}messages/${to_user_id}/`, {
         method: "GET",
         headers,
       });
@@ -60,7 +61,7 @@ function ChatPage() {
     }
 
     const socket = new WebSocket(
-      `ws://localhost:8000/chat/${to_user_id}/?access_token=${access_token}`
+      `ws://${API_URL}/chat/${to_user_id}/?access_token=${access_token}`
     );
     socketRef.current = socket; // Store reference in useRef
 
