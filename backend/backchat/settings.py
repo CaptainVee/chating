@@ -4,9 +4,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = "django-insecure-q8$1^k7t36@2_o#ddypqs2xn(0vsn07y6g@ynj_gq9zzo$_)2)"
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["chating-yejc.onrender.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     'corsheaders',
@@ -68,6 +68,7 @@ CORS_ORIGIN_ALLOW_ALL=True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://chating-frontend.onrender.com",
 ]
 
 DATABASES = {
